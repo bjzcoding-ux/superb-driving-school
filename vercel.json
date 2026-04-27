@@ -1,0 +1,3 @@
+{
+  "rewrites": [{ "source": "/", "destination": "/superb-driving-school.html" }]
+}
