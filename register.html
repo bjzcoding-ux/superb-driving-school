@@ -228,37 +228,43 @@ a{text-decoration:none;color:inherit}
 
           <!-- Package Selection -->
           <div class="form-section-title">Package Interest</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem">Automatic</div>
+          <div class="pkg-grid" style="margin-bottom:1rem">
+            <label class="pkg-option">
+              <input type="radio" name="pkg" value="Auto Single Lesson" checked>
+              <div class="pkg-label"><div class="pkg-name">Single Lesson</div><div class="pkg-price">$75/hr</div></div>
+            </label>
+            <label class="pkg-option">
+              <input type="radio" name="pkg" value="Auto 5-Lesson Pack">
+              <div class="pkg-label"><div class="pkg-name">5-Lesson Pack</div><div class="pkg-price">$350 upfront</div></div>
+            </label>
+            <label class="pkg-option">
+              <input type="radio" name="pkg" value="Auto 10-Lesson Pack">
+              <div class="pkg-label"><div class="pkg-name">10-Lesson Pack</div><div class="pkg-price">$650 upfront</div></div>
+            </label>
+          </div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem">Manual</div>
+          <div class="pkg-grid" style="margin-bottom:.75rem">
+            <label class="pkg-option">
+              <input type="radio" name="pkg" value="Manual Single Lesson">
+              <div class="pkg-label"><div class="pkg-name">Single Lesson</div><div class="pkg-price">$85/hr</div></div>
+            </label>
+            <label class="pkg-option">
+              <input type="radio" name="pkg" value="Manual 5-Lesson Pack">
+              <div class="pkg-label"><div class="pkg-name">5-Lesson Pack</div><div class="pkg-price">$400 upfront</div></div>
+            </label>
+            <label class="pkg-option">
+              <input type="radio" name="pkg" value="Manual 10-Lesson Pack">
+              <div class="pkg-label"><div class="pkg-name">10-Lesson Pack</div><div class="pkg-price">$750 upfront</div></div>
+            </label>
+          </div>
           <div class="pkg-grid">
             <label class="pkg-option">
-              <input type="radio" name="pkg" value="60min" checked>
-              <div class="pkg-label"><div class="pkg-name">60-Min Lesson</div><div class="pkg-price">$89</div></div>
-            </label>
-            <label class="pkg-option">
-              <input type="radio" name="pkg" value="90min">
-              <div class="pkg-label"><div class="pkg-name">90-Min Lesson</div><div class="pkg-price">$126</div></div>
-            </label>
-            <label class="pkg-option">
-              <input type="radio" name="pkg" value="120min">
-              <div class="pkg-label"><div class="pkg-name">120-Min Lesson</div><div class="pkg-price">$159</div></div>
-            </label>
-            <label class="pkg-option">
-              <input type="radio" name="pkg" value="6-bundle">
-              <div class="pkg-label"><div class="pkg-name">6-Lesson Bundle</div><div class="pkg-price">$499</div></div>
-            </label>
-            <label class="pkg-option">
-              <input type="radio" name="pkg" value="11-bundle">
-              <div class="pkg-label"><div class="pkg-name">11-Lesson Bundle</div><div class="pkg-price">$899</div></div>
-            </label>
-            <label class="pkg-option">
-              <input type="radio" name="pkg" value="25-bundle">
-              <div class="pkg-label"><div class="pkg-name">25-Lesson Bundle</div><div class="pkg-price">$1,999</div></div>
-            </label>
-            <label class="pkg-option">
-              <input type="radio" name="pkg" value="senior">
+              <input type="radio" name="pkg" value="Senior Driver Assessment">
               <div class="pkg-label"><div class="pkg-name">Senior Assessment</div><div class="pkg-price">Call for price</div></div>
             </label>
             <label class="pkg-option">
-              <input type="radio" name="pkg" value="other">
+              <input type="radio" name="pkg" value="Not sure yet">
               <div class="pkg-label"><div class="pkg-name">Not sure yet</div><div class="pkg-price">Let's chat</div></div>
             </label>
           </div>
@@ -274,6 +280,17 @@ a{text-decoration:none;color:inherit}
           </div>
           <div class="fg"><label>Additional Notes</label>
             <textarea id="r_notes" placeholder="Any previous experience, specific goals, or questions for Amritpal…"></textarea>
+          </div>
+
+          <!-- Booking policy notice -->
+          <div style="background:#FFF7F0;border:1.5px solid rgba(232,101,10,.2);border-radius:10px;padding:1rem 1.1rem;margin-bottom:.85rem">
+            <div style="font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem">Booking Policy</div>
+            <ul style="font-size:.78rem;color:var(--muted);line-height:1.8;padding-left:1rem">
+              <li>A <strong style="color:var(--dark)">$30 deposit</strong> is required to confirm your first booking.</li>
+              <li>Cancel <strong style="color:var(--dark)">less than 1 hour</strong> before your lesson → $30 kept as cancellation fee.</li>
+              <li>Attend your lesson → $30 goes <strong style="color:var(--dark)">towards your lesson fee</strong>, pay the balance after.</li>
+              <li>Pay via <strong style="color:var(--dark)">PayID: 0412 223 604</strong> (mobile number).</li>
+            </ul>
           </div>
 
           <button type="submit" class="form-submit" id="regSubmitBtn">
