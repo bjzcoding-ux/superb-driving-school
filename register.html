@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Register for driving lessons with Superb Driving School — Glenfield NSW. Learner lessons, test packages, and senior driver assessments.">
+<title>Register — Superb Driving School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#E8650A;--orange2:#FF7520;
+  --orange-dim:rgba(232,101,10,.08);--orange-glow:rgba(232,101,10,.22);
+  --dark:#111;--dark2:#333;
+  --bg:#F5F3EF;--card:#fff;
+  --text:#555;--muted:#777;--dim:#aaa;
+  --border:rgba(0,0,0,.09);--border2:rgba(0,0,0,.15);--bordero:rgba(232,101,10,.3);
+  --green:#16a34a;
+  --shadow:0 2px 14px rgba(0,0,0,.07);--shadow-lg:0 6px 30px rgba(0,0,0,.13);
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:15px;min-height:100vh}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.15;color:var(--dark)}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:640px;margin:0 auto}
+
+/* NAV */
+#nav{background:#111;padding:.85rem 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo img{height:40px;width:auto;display:block}
+.nav-back{font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:.4rem;transition:color .2s}
+.nav-back:hover{color:rgba(255,255,255,.8)}
+.nav-back svg{width:14px;height:14px}
+
+/* HERO */
+.reg-hero{background:var(--dark);padding:2.5rem 0 2rem;text-align:center}
+.reg-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(232,101,10,.2);border:1px solid rgba(232,101,10,.35);border-radius:100px;padding:.28rem .85rem;font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#FFB070;margin-bottom:.85rem}
+.reg-h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;color:#fff;margin-bottom:.5rem}
+.reg-h1 em{font-style:normal;color:var(--orange)}
+.reg-sub{font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.75;max-width:420px;margin:0 auto}
+
+/* RETURNING STUDENT LOOKUP */
+.lookup-bar{background:#fff;border-radius:12px;box-shadow:var(--shadow-lg);border:1px solid var(--border);padding:1.1rem 1.25rem;margin:1.5rem auto 0;display:flex;align-items:center;gap:.75rem;max-width:640px}
+.lookup-bar input{flex:1;border:none;outline:none;font-family:'Open Sans',sans-serif;font-size:.88rem;color:var(--dark);background:none;min-width:0}
+.lookup-bar input::placeholder{color:var(--dim)}
+.lookup-btn{font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--orange);color:#fff;padding:.55rem 1rem;border-radius:7px;border:none;cursor:pointer;white-space:nowrap;transition:background .2s}
+.lookup-btn:hover{background:var(--orange2)}
+.lookup-hint{font-size:.72rem;color:rgba(255,255,255,.4);text-align:center;margin-top:.65rem;padding-bottom:.5rem}
+
+/* RETURNING FOUND */
+#returningFound{display:none;margin:1rem auto 0;max-width:640px}
+.returning-card{background:var(--orange);border-radius:12px;padding:1.25rem 1.5rem;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.returning-name{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800}
+.returning-info{font-size:.8rem;opacity:.85;margin-top:.2rem}
+.returning-btn{font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:#fff;color:var(--orange);padding:.55rem 1rem;border-radius:7px;border:none;cursor:pointer;flex-shrink:0;transition:background .2s}
+.returning-btn:hover{background:rgba(255,255,255,.88)}
+
+/* MAIN FORM CARD */
+.form-wrap{padding:2rem 0 4rem}
+.form-card{background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);border:1px solid var(--border);padding:2rem 1.75rem}
+.form-section-title{font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;margin-top:1.5rem;display:flex;align-items:center;gap:.6rem}
+.form-section-title::before{content:'';display:block;width:16px;height:2px;background:var(--orange);border-radius:1px}
+.form-section-title:first-child{margin-top:0}
+.fg{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.75rem}
+.fg label{font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.fg label span{color:var(--orange)}
+.fg input,.fg select,.fg textarea{
+  border:1.5px solid var(--border2);border-radius:8px;
+  padding:.78rem 1rem;font-family:'Open Sans',sans-serif;font-size:.88rem;
+  color:var(--dark);background:var(--bg);outline:none;width:100%;
+  transition:border-color .2s,background .2s;-webkit-appearance:none;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--orange);background:#fff}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--dim)}
+.fg select option{background:#fff;color:var(--dark)}
+.fg textarea{resize:vertical;min-height:80px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.field-hint{font-size:.72rem;color:var(--muted);margin-top:.25rem;line-height:1.5}
+
+/* PACKAGE CARDS */
+.pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:.75rem}
+.pkg-option{cursor:pointer}
+.pkg-option input[type=radio]{display:none}
+.pkg-label{display:block;border:1.5px solid var(--border2);border-radius:10px;padding:.9rem 1rem;background:var(--bg);transition:all .2s}
+.pkg-option input:checked + .pkg-label{border-color:var(--orange);background:var(--orange-dim)}
+.pkg-label:hover{border-color:var(--orange)}
+.pkg-name{font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:700;color:var(--dark);margin-bottom:.2rem}
+.pkg-price{font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:800;color:var(--orange)}
+
+/* SUBMIT */
+.form-submit{
+  width:100%;padding:1rem;margin-top:.5rem;
+  background:var(--orange);color:#fff;
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;
+  border:none;border-radius:10px;cursor:pointer;
+  box-shadow:0 4px 18px var(--orange-glow);
+  transition:background .2s,transform .15s;
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+}
+.form-submit:hover{background:var(--orange2);transform:translateY(-1px)}
+.form-submit:disabled{opacity:.6;pointer-events:none}
+
+/* SUCCESS SCREEN */
+#successScreen{display:none;text-align:center;padding:3rem 1.5rem}
+.success-icon{width:72px;height:72px;background:rgba(22,163,74,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;border:2px solid rgba(22,163,74,.25)}
+.success-icon svg{width:34px;height:34px;color:var(--green)}
+.success-h2{font-family:'Montserrat',sans-serif;font-size:1.35rem;font-weight:900;color:var(--dark);margin-bottom:.5rem}
+.success-p{font-size:.88rem;color:var(--muted);line-height:1.8;max-width:340px;margin:0 auto 1.5rem}
+.success-call{display:inline-flex;align-items:center;gap:.5rem;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:.85rem 1.75rem;border-radius:10px;box-shadow:0 4px 16px var(--orange-glow);transition:background .2s}
+.success-call:hover{background:var(--orange2)}
+
+/* TRUST BADGES */
+.trust-row{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;margin-top:1.5rem}
+.trust-badge{font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.06em;padding:.35rem .85rem;border-radius:100px;border:1.5px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.trust-badge svg{width:12px;height:12px;color:var(--orange)}
+
+@media(max-width:520px){
+  .form-card{padding:1.5rem 1.25rem}
+  .form-row{grid-template-columns:1fr}
+  .pkg-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container" style="max-width:1000px">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><img src="logo.png" alt="Superb Driving School" height="40"></a>
+      <a href="/" class="nav-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to website
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="reg-hero">
+  <div class="container">
+    <div class="reg-tag">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l2-8h14l2 8H3z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>
+      Superb Driving School · Glenfield NSW
+    </div>
+    <h1 class="reg-h1">Enrol for <em>Driving Lessons</em></h1>
+    <p class="reg-sub">Fill in the form below and Amritpal will be in touch within a few hours to confirm your first lesson.</p>
+  </div>
+
+  <!-- Returning student lookup -->
+  <div class="container">
+    <div class="lookup-bar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="tel" id="lookupPhone" placeholder="Returning student? Enter your phone number…" inputmode="tel">
+      <button class="lookup-btn" onclick="lookupPhone()">Find Me</button>
+    </div>
+    <p class="lookup-hint">New student? Skip this and fill the form below.</p>
+    <div id="returningFound"></div>
+  </div>
+</div>
+
+<!-- MAIN FORM -->
+<div class="form-wrap">
+  <div class="container">
+
+    <!-- Success screen (hidden by default) -->
+    <div id="successScreen">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2 class="success-h2">You're registered!</h2>
+      <p class="success-p">Amritpal will be in touch within a few hours to confirm your first lesson. If urgent, call him directly.</p>
+      <a href="tel:0412223604" class="success-call">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 0412 223 604
+      </a>
+      <div class="trust-row">
+        <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> RTA Qualified</span>
+        <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 96% Pass Rate</span>
+        <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home Pickup</span>
+      </div>
+    </div>
+
+    <div id="formWrap">
+      <div class="form-card">
+        <form id="regForm" onsubmit="submitReg(event)" novalidate>
+
+          <!-- Personal Details -->
+          <div class="form-section-title">Your Details</div>
+          <div class="form-row">
+            <div class="fg"><label>First Name <span>*</span></label><input type="text" id="r_fname" placeholder="Jordan" required></div>
+            <div class="fg"><label>Last Name <span>*</span></label><input type="text" id="r_lname" placeholder="Smith" required></div>
+          </div>
+          <div class="form-row">
+            <div class="fg"><label>Phone <span>*</span></label><input type="tel" id="r_phone" placeholder="04XX XXX XXX" inputmode="tel" required></div>
+            <div class="fg"><label>Email</label><input type="email" id="r_email" placeholder="you@email.com"></div>
+          </div>
+          <div class="fg"><label>Suburb <span>*</span></label><input type="text" id="r_suburb" placeholder="Glenfield" required>
+            <div class="field-hint">We offer home pickup across South West Sydney.</div>
+          </div>
+
+          <!-- Lesson Details -->
+          <div class="form-section-title">Lesson Preference</div>
+          <div class="form-row">
+            <div class="fg"><label>Licence Stage <span>*</span></label>
+              <select id="r_stage" required>
+                <option value="">Select…</option>
+                <option value="L">L — Learner Driver</option>
+                <option value="P1">P1 — Provisionals</option>
+                <option value="P2">P2 — Green P's</option>
+                <option value="Senior">Senior Driver Assessment</option>
+                <option value="Refresher">Refresher Lessons</option>
+              </select>
+            </div>
+            <div class="fg"><label>Transmission</label>
+              <select id="r_trans">
+                <option value="auto">Automatic</option>
+                <option value="manual">Manual</option>
+                <option value="both">Not sure yet</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Package Selection -->
+          <div class="form-section-title">Package Interest</div>
+          <div class="pkg-grid">
+            <label class="pkg-option">
+              <input type="radio" name="pkg" value="60min" checked>
+              <div class="pkg-label"><div class="pkg-name">60-Min Lesson</div><div class="pkg-price">$89</div></div>
+            </label>
+            <label class="pkg-option">
+              <input type="radio" name="pkg" value="90min">
+              <div class="pkg-label"><div class="pkg-name">90-Min Lesson</div><div class="pkg-price">$126</div></div>
+            </label>
+            <label class="pkg-option">
+              <input type="radio" name="pkg" value="120min">
+              <div class="pkg-label"><div class="pkg-name">120-Min Lesson</div><div class="pkg-price">$159</div></div>
+            </label>
+            <label class="pkg-option">
+              <input type="radio" name="pkg" value="6-bundle">
+              <div class="pkg-label"><div class="pkg-name">6-Lesson Bundle</div><div class="pkg-price">$499</div></div>
+            </label>
+            <label class="pkg-option">
+              <input type="radio" name="pkg" value="11-bundle">
+              <div class="pkg-label"><div class="pkg-name">11-Lesson Bundle</div><div class="pkg-price">$899</div></div>
+            </label>
+            <label class="pkg-option">
+              <input type="radio" name="pkg" value="25-bundle">
+              <div class="pkg-label"><div class="pkg-name">25-Lesson Bundle</div><div class="pkg-price">$1,999</div></div>
+            </label>
+            <label class="pkg-option">
+              <input type="radio" name="pkg" value="senior">
+              <div class="pkg-label"><div class="pkg-name">Senior Assessment</div><div class="pkg-price">Call for price</div></div>
+            </label>
+            <label class="pkg-option">
+              <input type="radio" name="pkg" value="other">
+              <div class="pkg-label"><div class="pkg-name">Not sure yet</div><div class="pkg-price">Let's chat</div></div>
+            </label>
+          </div>
+
+          <!-- Scheduling Preferences -->
+          <div class="form-section-title">Availability</div>
+          <div class="fg"><label>Preferred Days &amp; Times</label>
+            <textarea id="r_avail" placeholder="E.g. Weekday mornings, Saturday afternoons…"></textarea>
+          </div>
+          <div class="fg"><label>Test Date (if booked)</label>
+            <input type="date" id="r_testdate">
+            <div class="field-hint">If you have a test already booked, enter the date so we can prioritise.</div>
+          </div>
+          <div class="fg"><label>Additional Notes</label>
+            <textarea id="r_notes" placeholder="Any previous experience, specific goals, or questions for Amritpal…"></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" id="regSubmitBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Submit Registration
+          </button>
+
+          <p style="text-align:center;font-size:.72rem;color:var(--muted);margin-top:1rem;line-height:1.7">
+            By submitting, you agree to be contacted by Superb Driving School regarding your lesson booking. No payment is taken here.
+          </p>
+
+        </form>
+      </div>
+
+      <div class="trust-row">
+        <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> RTA Qualified</span>
+        <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 96% Pass Rate</span>
+        <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home Pickup</span>
+        <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 7 Days Available</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// TODO: Replace with your Supabase project values
+const SUPABASE_URL      = 'https://optxzghfpxiedogmcfqx.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9wdHh6Z2hmcHhpZWRvZ21jZnF4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3NTQzMjMsImV4cCI6MjA5MzMzMDMyM30.QG18avsseBn51A07sd-8T5j1aucIxluPKeIyUjqyc30';
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// ── RETURNING STUDENT LOOKUP ───────────────────────────────────────
+let _foundStudent = null; // store found student, avoid inline JS injection
+
+function esc(str) {
+  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+async function lookupPhone() {
+  const phone = document.getElementById('lookupPhone').value.trim().replace(/\s/g, '');
+  if (!phone) return;
+  const { data } = await sb.from('students').select('*').eq('phone', phone).eq('active', true).single();
+  const container = document.getElementById('returningFound');
+  if (data) {
+    _foundStudent = data;
+    container.style.display = 'block';
+    container.innerHTML = `<div class="returning-card">
+      <div>
+        <div class="returning-name">${esc(data.first_name)} ${esc(data.last_name)}</div>
+        <div class="returning-info">
+          ${esc(data.sds_id)} · ${esc(data.licence_stage)} · ${esc(data.suburb || 'Glenfield')}
+        </div>
+      </div>
+      <button class="returning-btn" onclick="prefillReturning()">Returning Student →</button>
+    </div>`;
+  } else {
+    _foundStudent = null;
+    container.style.display = 'block';
+    container.innerHTML = `<div style="text-align:center;font-size:.78rem;color:rgba(255,255,255,.5);padding:.5rem">No record found for that number. Please fill in the form below as a new student.</div>`;
+  }
+}
+
+document.getElementById('lookupPhone').addEventListener('keydown', e => {
+  if (e.key === 'Enter') { e.preventDefault(); lookupPhone(); }
+});
+
+function prefillReturning() {
+  const student = _foundStudent;
+  if (!student) return;
+  document.getElementById('r_fname').value   = student.first_name || '';
+  document.getElementById('r_lname').value   = student.last_name  || '';
+  document.getElementById('r_phone').value   = student.phone      || '';
+  document.getElementById('r_email').value   = student.email      || '';
+  document.getElementById('r_suburb').value  = student.suburb     || '';
+  if (student.licence_stage) document.getElementById('r_stage').value = student.licence_stage;
+  if (student.transmission)  document.getElementById('r_trans').value  = student.transmission;
+  document.getElementById('formWrap').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+// ── FORM SUBMIT ────────────────────────────────────────────────────
+async function submitReg(e) {
+  e.preventDefault();
+  let valid = true;
+  ['r_fname','r_lname','r_phone','r_suburb','r_stage'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el.value.trim()) {
+      valid = false;
+      el.style.borderColor = '#dc2626';
+      el.addEventListener('input', () => el.style.borderColor = '', { once:true });
+    }
+  });
+  if (!valid) return;
+
+  const btn = document.getElementById('regSubmitBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Submitting…';
+
+  const pkg = document.querySelector('input[name=pkg]:checked')?.value || 'other';
+  const testDate = document.getElementById('r_testdate').value;
+
+  const notes = [
+    `Package interest: ${pkg}`,
+    document.getElementById('r_avail').value ? `Availability: ${document.getElementById('r_avail').value}` : '',
+    testDate ? `Test date: ${testDate}` : '',
+    document.getElementById('r_notes').value
+  ].filter(Boolean).join('\n');
+
+  const { error } = await sb.from('students').insert({
+    first_name:    document.getElementById('r_fname').value.trim(),
+    last_name:     document.getElementById('r_lname').value.trim(),
+    phone:         document.getElementById('r_phone').value.trim(),
+    email:         document.getElementById('r_email').value.trim() || null,
+    suburb:        document.getElementById('r_suburb').value.trim() || null,
+    licence_stage: document.getElementById('r_stage').value,
+    transmission:  document.getElementById('r_trans').value,
+    notes
+  });
+
+  if (error) {
+    btn.disabled = false;
+    btn.innerHTML = 'Submit Registration';
+    alert('Something went wrong. Please call Amritpal directly on 0412 223 604.');
+    return;
+  }
+
+  // Fire email notification (non-blocking)
+  try {
+    await fetch('/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name:  `${document.getElementById('r_fname').value} ${document.getElementById('r_lname').value}`,
+        phone: document.getElementById('r_phone').value,
+        email: document.getElementById('r_email').value,
+        stage: document.getElementById('r_stage').value,
+        pkg,
+        suburb: document.getElementById('r_suburb').value
+      })
+    });
+  } catch(_) {}
+
+  // Show success
+  document.getElementById('formWrap').style.display = 'none';
+  const success = document.getElementById('successScreen');
+  success.style.display = 'block';
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+</script>
+</body>
+</html>

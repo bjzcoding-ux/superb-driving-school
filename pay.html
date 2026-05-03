@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pay for your driving lessons online — Superb Driving School Glenfield.">
+<title>Pay Online — Superb Driving School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#E8650A;--orange2:#FF7520;
+  --orange-dim:rgba(232,101,10,.08);--orange-glow:rgba(232,101,10,.22);
+  --dark:#111;--dark2:#333;
+  --bg:#F5F3EF;
+  --text:#555;--muted:#777;--dim:#aaa;
+  --border:rgba(0,0,0,.09);--border2:rgba(0,0,0,.15);
+  --green:#16a34a;--green-dim:rgba(22,163,74,.08);
+  --shadow:0 2px 14px rgba(0,0,0,.07);--shadow-lg:0 8px 36px rgba(0,0,0,.13);
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:15px;min-height:100vh;display:flex;flex-direction:column}
+h1,h2,h3{font-family:'Montserrat',sans-serif;line-height:1.15;color:var(--dark)}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:520px;margin:0 auto}
+
+/* NAV */
+#nav{background:#111;padding:.85rem 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1000px;width:90%;margin:0 auto}
+.nav-logo img{height:40px;width:auto;display:block}
+.nav-back{font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:.4rem;transition:color .2s}
+.nav-back:hover{color:rgba(255,255,255,.8)}
+.nav-back svg{width:14px;height:14px}
+
+/* MAIN */
+main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1rem 4rem}
+
+/* HEADER */
+.pay-header{text-align:center;margin-bottom:2rem}
+.pay-logo-wrap{width:64px;height:64px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;box-shadow:0 6px 22px var(--orange-glow)}
+.pay-logo-wrap svg{width:30px;height:30px;color:#fff}
+.pay-header h1{font-size:1.5rem;font-weight:900;margin-bottom:.35rem}
+.pay-header p{font-size:.88rem;color:var(--muted);line-height:1.7}
+
+/* CARD */
+.pay-card{background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);border:1px solid var(--border);padding:2rem 1.75rem;width:100%;max-width:480px}
+
+/* FORM ELEMENTS */
+.fg{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.8rem}
+.fg label{font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.fg label span{color:var(--orange)}
+.fg input,.fg select{
+  border:1.5px solid var(--border2);border-radius:8px;
+  padding:.78rem 1rem;font-family:'Open Sans',sans-serif;font-size:.88rem;
+  color:var(--dark);background:var(--bg);outline:none;width:100%;
+  transition:border-color .2s,background .2s;-webkit-appearance:none;
+}
+.fg input:focus,.fg select:focus{border-color:var(--orange);background:#fff}
+.fg input::placeholder{color:var(--dim)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+
+/* PACKAGE RADIO */
+.pkg-list{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.85rem}
+.pkg-opt{cursor:pointer}
+.pkg-opt input{display:none}
+.pkg-lbl{display:flex;align-items:center;justify-content:space-between;border:1.5px solid var(--border2);border-radius:10px;padding:.85rem 1rem;background:var(--bg);transition:all .2s;cursor:pointer}
+.pkg-opt input:checked + .pkg-lbl{border-color:var(--orange);background:var(--orange-dim)}
+.pkg-lbl:hover{border-color:var(--orange)}
+.pkg-lbl-name{font-family:'Montserrat',sans-serif;font-size:.84rem;font-weight:700;color:var(--dark)}
+.pkg-lbl-price{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:900;color:var(--orange)}
+.selected-price{display:flex;align-items:center;justify-content:space-between;padding:1rem;background:var(--orange);border-radius:10px;margin-bottom:1rem}
+.selected-price span:first-child{font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.selected-price .price-amt{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:#fff;line-height:1}
+
+/* SUBMIT */
+.pay-btn{
+  width:100%;padding:1rem;margin-top:.25rem;
+  background:var(--orange);color:#fff;
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;
+  border:none;border-radius:10px;cursor:pointer;
+  box-shadow:0 4px 18px var(--orange-glow);
+  transition:background .2s,transform .15s;
+  display:flex;align-items:center;justify-content:center;gap:.55rem;
+}
+.pay-btn:hover{background:var(--orange2);transform:translateY(-1px)}
+.pay-btn:disabled{opacity:.6;pointer-events:none}
+
+/* SECURE BADGES */
+.secure-row{display:flex;gap:.6rem;justify-content:center;margin-top:1rem;flex-wrap:wrap}
+.secure-badge{font-size:.68rem;color:var(--muted);display:flex;align-items:center;gap:.3rem;font-family:'Montserrat',sans-serif;font-weight:600}
+.secure-badge svg{width:13px;height:13px;color:var(--green)}
+
+/* DIVIDER */
+.form-divider{font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:center;margin:.9rem 0;position:relative}
+.form-divider::before,.form-divider::after{content:'';position:absolute;top:50%;height:1px;background:var(--border);width:calc(50% - 40px)}
+.form-divider::before{left:0}.form-divider::after{right:0}
+
+/* SUCCESS */
+#successState{display:none;text-align:center;padding:2rem 1rem}
+.success-check{width:72px;height:72px;background:var(--green-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;border:2px solid rgba(22,163,74,.25)}
+.success-check svg{width:34px;height:34px;color:var(--green)}
+.success-title{font-size:1.3rem;font-weight:900;margin-bottom:.5rem}
+.success-sub{font-size:.85rem;color:var(--muted);line-height:1.8;max-width:340px;margin:0 auto 1.5rem}
+.success-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:.85rem 1.75rem;border-radius:10px;box-shadow:0 4px 16px var(--orange-glow);transition:background .2s}
+.success-cta:hover{background:var(--orange2)}
+
+@media(max-width:420px){
+  .pay-card{padding:1.5rem 1.1rem}
+  .form-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="logo.png" alt="Superb Driving School" height="40"></a>
+    <a href="/" class="nav-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Back
+    </a>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+
+    <div class="pay-header">
+      <div class="pay-logo-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <h1>Pay for Lessons</h1>
+      <p>Secure online payment — powered by Stripe.<br>Amritpal will confirm your booking within a few hours.</p>
+    </div>
+
+    <div class="pay-card">
+
+      <!-- Success state (shown on return from Stripe) -->
+      <div id="successState">
+        <div class="success-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="success-title">Payment received!</div>
+        <p class="success-sub">Thank you — Amritpal will be in touch to schedule your lessons. If urgent, call him directly.</p>
+        <a href="tel:0412223604" class="success-cta">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call 0412 223 604
+        </a>
+      </div>
+
+      <!-- Payment form -->
+      <form id="payForm" onsubmit="startCheckout(event)">
+
+        <div class="form-row">
+          <div class="fg"><label>First Name <span>*</span></label><input type="text" id="p_fname" placeholder="Jordan" required></div>
+          <div class="fg"><label>Last Name <span>*</span></label><input type="text" id="p_lname" placeholder="Smith" required></div>
+        </div>
+        <div class="fg"><label>Phone <span>*</span></label><input type="tel" id="p_phone" placeholder="04XX XXX XXX" inputmode="tel" required></div>
+
+        <div class="form-divider">Select package</div>
+
+        <div class="pkg-list">
+          <label class="pkg-opt"><input type="radio" name="p_pkg" value="60-Minute Lesson|89" required>
+            <div class="pkg-lbl"><span class="pkg-lbl-name">60-Minute Lesson</span><span class="pkg-lbl-price">$89</span></div>
+          </label>
+          <label class="pkg-opt"><input type="radio" name="p_pkg" value="90-Minute Lesson|126">
+            <div class="pkg-lbl"><span class="pkg-lbl-name">90-Minute Lesson</span><span class="pkg-lbl-price">$126</span></div>
+          </label>
+          <label class="pkg-opt"><input type="radio" name="p_pkg" value="120-Minute Lesson|159">
+            <div class="pkg-lbl"><span class="pkg-lbl-name">120-Minute Lesson</span><span class="pkg-lbl-price">$159</span></div>
+          </label>
+          <label class="pkg-opt"><input type="radio" name="p_pkg" value="6-Lesson Bundle|499">
+            <div class="pkg-lbl"><span class="pkg-lbl-name">6-Lesson Bundle</span><span class="pkg-lbl-price">$499</span></div>
+          </label>
+          <label class="pkg-opt"><input type="radio" name="p_pkg" value="11-Lesson Bundle|899">
+            <div class="pkg-lbl"><span class="pkg-lbl-name">11-Lesson Bundle</span><span class="pkg-lbl-price">$899</span></div>
+          </label>
+          <label class="pkg-opt"><input type="radio" name="p_pkg" value="25-Lesson Bundle|1999">
+            <div class="pkg-lbl"><span class="pkg-lbl-name">25-Lesson Bundle</span><span class="pkg-lbl-price">$1,999</span></div>
+          </label>
+        </div>
+
+        <div class="selected-price" id="selectedPriceRow" style="display:none">
+          <span>Total due</span>
+          <span class="price-amt" id="selectedPriceAmt">$0</span>
+        </div>
+
+        <button type="submit" class="pay-btn" id="payBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Pay Securely via Stripe
+        </button>
+
+        <div class="secure-row">
+          <span class="secure-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> SSL Secured</span>
+          <span class="secure-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Powered by Stripe</span>
+          <span class="secure-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> No card stored</span>
+        </div>
+
+      </form>
+
+    </div>
+
+    <p style="text-align:center;font-size:.72rem;color:var(--muted);margin-top:1.25rem;line-height:1.7">
+      Questions? Call Amritpal on <a href="tel:0412223604" style="color:var(--orange);font-weight:700">0412 223 604</a>
+    </p>
+
+  </div>
+</main>
+
+<script>
+// Show success state if returning from Stripe
+const params = new URLSearchParams(location.search);
+if (params.get('status') === 'success') {
+  document.getElementById('successState').style.display = 'block';
+  document.getElementById('payForm').style.display = 'none';
+}
+
+// Update price display when package selected
+document.querySelectorAll('input[name=p_pkg]').forEach(radio => {
+  radio.addEventListener('change', function() {
+    const price = this.value.split('|')[1];
+    const row = document.getElementById('selectedPriceRow');
+    row.style.display = 'flex';
+    document.getElementById('selectedPriceAmt').textContent = `$${parseInt(price).toLocaleString('en-AU')}`;
+  });
+});
+
+// Submit → call Stripe checkout API
+async function startCheckout(e) {
+  e.preventDefault();
+  const pkg = document.querySelector('input[name=p_pkg]:checked');
+  if (!pkg) { alert('Please select a package.'); return; }
+
+  const btn = document.getElementById('payBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Redirecting to Stripe…';
+
+  const [packageName, amount] = pkg.value.split('|');
+  const firstName = document.getElementById('p_fname').value.trim();
+  const lastName  = document.getElementById('p_lname').value.trim();
+  const phone     = document.getElementById('p_phone').value.trim();
+
+  try {
+    const res = await fetch('/api/create-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type':'application/json' },
+      body: JSON.stringify({
+        student_name: `${firstName} ${lastName}`,
+        phone,
+        package_name: packageName,
+        amount_cents: parseInt(amount) * 100
+      })
+    });
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      throw new Error(data.error || 'No checkout URL');
+    }
+  } catch (err) {
+    alert('Payment error. Please call Amritpal on 0412 223 604 or try again.');
+    btn.disabled = false;
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Pay Securely via Stripe';
+  }
+}
+</script>
+</body>
+</html>

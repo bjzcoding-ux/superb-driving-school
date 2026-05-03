@@ -1,3 +1,6 @@
 {
-  "rewrites": [{ "source": "/", "destination": "/superb-driving-school.html" }]
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/login", "destination": "/instructor" }
+  ]
 }

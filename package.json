@@ -1,0 +1,9 @@
+{
+  "name": "superb-driving-school",
+  "version": "1.0.0",
+  "description": "Superb Driving School — website, instructor portal, and registration",
+  "dependencies": {
+    "stripe": "^14.0.0",
+    "resend": "^3.0.0"
+  }
+}
