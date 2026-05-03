@@ -1207,12 +1207,35 @@ const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isInte
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-nav.offsetHeight-8,behavior:'smooth'})}})});
 const form=document.getElementById('bookForm');
-form.addEventListener('submit',e=>{
-  e.preventDefault();let ok=true;
-  form.querySelectorAll('[required]').forEach(f=>{if(!f.value.trim()){ok=false;f.style.borderColor='#dc2626';f.addEventListener('input',()=>f.style.borderColor='',{once:true})}});
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  let ok=true;
+  form.querySelectorAll('[required]').forEach(f=>{
+    if(!f.value.trim()){ok=false;f.style.borderColor='#dc2626';f.addEventListener('input',()=>f.style.borderColor='',{once:true})}
+  });
   if(!ok)return;
-  const btn=form.querySelector('.form-submit');btn.disabled=true;btn.textContent='Sending...';
-  setTimeout(()=>{form.querySelectorAll('input,select,textarea').forEach(f=>f.value='');btn.style.display='none';document.getElementById('formOk').style.display='block'},900);
+  const btn=form.querySelector('.form-submit');
+  btn.disabled=true;btn.textContent='Sending...';
+  try {
+    await fetch('/api/send-email',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        name: (document.getElementById('fn').value.trim()+' '+document.getElementById('ln').value.trim()).trim(),
+        phone: document.getElementById('ph').value.trim(),
+        email: document.getElementById('em').value.trim(),
+        pkg: document.getElementById('pk').value.trim(),
+        transmission: document.getElementById('tr').value.trim(),
+        notes: document.getElementById('ms').value.trim(),
+        source: 'contact'
+      })
+    });
+  } catch(err){
+    console.error('Email send error:',err);
+  }
+  form.querySelectorAll('input,select,textarea').forEach(f=>f.value='');
+  btn.style.display='none';
+  document.getElementById('formOk').style.display='block';
 });
 </script>
 </body>
