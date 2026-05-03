@@ -26,7 +26,7 @@ module.exports = async function handler(req, res) {
   try {
     await resend.emails.send({
       from:    'Superb Driving School <noreply@superbdrivingschool.com.au>',
-      to:      ['amrit80@bigpond.com'],
+      to:      ['bjzcoding@gmail.com'],
       subject: subjectLine,
       html: `
         <div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:20px">
