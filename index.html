@@ -3,8 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Superb Driving School Glenfield – RTA Qualified Instructor. Learner lessons, test packages & Senior Driver Assessments. Call 0412 223 604.">
-<title>Superb Driving School | Glenfield NSW | 0412 223 604</title>
+<meta name="description" content="Superb Driving School — Campbelltown & South West Sydney. Auto & manual driving lessons, TfNSW Accredited Senior Driver Assessments. 2025 Local Business Awards Finalist. Call Amritpal: 0412 223 604.">
+<meta name="keywords" content="driving school campbelltown, driving lessons south west sydney, senior driver assessment NSW, manual driving instructor, learner driver lessons glenfield, older driver assessment 75+">
+<link rel="canonical" href="https://www.superbdrivingschool.com.au/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Superb Driving School | Campbelltown, SW Sydney">
+<meta property="og:description" content="Auto & manual driving lessons + TfNSW Accredited Senior Driver Assessments. 2025 Campbelltown Local Business Awards Finalist. Call 0412 223 604.">
+<meta property="og:url" content="https://www.superbdrivingschool.com.au/">
+<meta property="og:image" content="https://www.superbdrivingschool.com.au/assets/photos/car-grey-suv.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<title>Superb Driving School | Campbelltown & SW Sydney | 0412 223 604</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -330,6 +338,40 @@ img{max-width:100%;display:block}
   .loc-grid{grid-template-columns:repeat(2,1fr)}
   .form-row{grid-template-columns:1fr}
 }
+
+/* REAL PHOTO HELPER */
+.real-photo{width:100%;height:100%;object-fit:cover;display:block}
+
+/* AWARD BADGE */
+.award-badge{display:inline-flex;align-items:center;gap:.75rem;background:linear-gradient(135deg,#fff9ee,#fff3d6);border:2px solid #F0C040;border-radius:10px;padding:.8rem 1.25rem;margin-bottom:1.5rem}
+.award-badge-medal{font-size:1.6rem;line-height:1}
+.award-badge-text{font-family:'Montserrat',sans-serif}
+.award-badge-title{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#A07010;display:block}
+.award-badge-name{font-size:.86rem;font-weight:800;color:var(--dark);display:block;margin-top:.1rem}
+
+/* SUCCESS / P-PLATE WALL */
+.success-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:2.5rem}
+.success-card{border-radius:10px;overflow:hidden;position:relative;aspect-ratio:3/4;background:#eee}
+.success-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s var(--ease)}
+.success-card:hover img{transform:scale(1.05)}
+.success-caption{position:absolute;bottom:0;left:0;right:0;padding:.65rem .75rem;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 100%);font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;color:#fff;line-height:1.35}
+.success-p-badge{display:inline-block;background:#c00;color:#fff;font-family:'Montserrat',sans-serif;font-size:.55rem;font-weight:800;letter-spacing:.08em;padding:.15rem .45rem;border-radius:3px;margin-bottom:.25rem}
+
+/* BLOG TEASER */
+.blog-teaser{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.5rem}
+.blog-card{border-radius:12px;overflow:hidden;background:#fff;box-shadow:var(--shadow);border:1px solid var(--border);display:flex;flex-direction:column;transition:all .25s var(--ease)}
+.blog-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.blog-card-img{height:200px;overflow:hidden;background:linear-gradient(135deg,#FDB85A,#C85808);position:relative}
+.blog-card-img img{width:100%;height:100%;object-fit:cover}
+.blog-card-tag{position:absolute;top:.75rem;left:.75rem;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px}
+.blog-card-body{padding:1.5rem;flex:1;display:flex;flex-direction:column;gap:.6rem}
+.blog-card-body h3{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;color:var(--dark);line-height:1.3}
+.blog-card-body p{font-size:.82rem;color:var(--muted);line-height:1.7;flex:1}
+.blog-read{font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:.35rem;margin-top:.25rem}
+.blog-read:hover{gap:.6rem}
+
+@media(max-width:900px){.success-grid{grid-template-columns:repeat(2,1fr)}.blog-teaser{grid-template-columns:1fr}}
+@media(max-width:600px){.success-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -343,6 +385,7 @@ img{max-width:100%;display:block}
   <a href="#about" class="mob-link">About</a>
   <a href="#testimonials" class="mob-link">Reviews</a>
   <a href="#contact" class="mob-link">Contact</a>
+  <a href="/blog" class="mob-link hl">Blog</a>
 </div>
 
 <!-- NAV -->
@@ -359,6 +402,7 @@ img{max-width:100%;display:block}
         <li><a href="#about">About</a></li>
         <li><a href="#testimonials">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="/blog">Blog</a></li>
       </ul>
       <a href="tel:0412223604" class="btn btn-orange nav-call">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -444,10 +488,7 @@ img{max-width:100%;display:block}
       <!-- Card 1: Learner Lessons -->
       <div class="svc-card">
         <div class="svc-card-img">
-          <div class="photo-ph" style="height:200px">
-            <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <p class="ph-text">Photo: Young learner + instructor, L-plate visible, friendly lesson</p>
-          </div>
+          <img src="assets/photos/pass-1.jpg" alt="Student passing driving test with Superb Driving School" class="real-photo" style="height:200px">
         </div>
         <div class="svc-card-body">
           <h3>Learner Driver Lessons</h3>
@@ -458,10 +499,7 @@ img{max-width:100%;display:block}
       <!-- Card 2: Test Preparation -->
       <div class="svc-card">
         <div class="svc-card-img">
-          <div class="photo-ph" style="height:200px">
-            <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <p class="ph-text">Photo: Student outside Glenfield test centre, P-plates, celebrating pass</p>
-          </div>
+          <img src="assets/photos/pass-6.jpg" alt="Student celebrating P-plate pass with Amrit" class="real-photo" style="height:200px">
         </div>
         <div class="svc-card-body">
           <h3>Test Preparation Package</h3>
@@ -487,10 +525,7 @@ img{max-width:100%;display:block}
       <!-- Card 4: Refresher Lessons -->
       <div class="svc-card">
         <div class="svc-card-img">
-          <div class="photo-ph" style="height:200px">
-            <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <p class="ph-text">Photo: Adult driver, confident, returning after a break — in-car lesson</p>
-          </div>
+          <img src="assets/photos/pass-4.jpg" alt="Student with Superb Driving School" class="real-photo" style="height:200px">
         </div>
         <div class="svc-card-body">
           <h3>Refresher Lessons</h3>
@@ -507,29 +542,37 @@ img{max-width:100%;display:block}
   <div class="container">
     <div class="about-grid">
       <div class="about-photo reveal">
-        <div class="photo-ph" style="height:460px">
-          <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <p class="ph-text">Photo: Instructor Amritpal Singh, professional headshot in front of car, Glenfield</p>
-        </div>
+        <img src="assets/photos/amrit-headshot.jpg" alt="Amritpal Singh — Superb Driving School instructor" class="real-photo" style="height:460px;border-radius:12px">
       </div>
       <div class="reveal">
-        <span class="eyebrow">About Your Instructor</span>
+        <span class="eyebrow">About Your Instructors</span>
         <span class="line"></span>
-        <h2 class="sec-title">Meet Amritpal Singh.</h2>
-        <p class="sec-sub" style="margin-bottom:1.75rem">With over 12 years of experience teaching drivers across South West Sydney, Amritpal is known for his patient, structured approach — getting learners test-ready efficiently, without the nerves.</p>
-        <p class="sec-sub" style="margin-bottom:0">"I believe every learner is different. My job is to understand your pace, build your confidence, and get you on the road safely — for life."</p>
+        <div class="award-badge">
+          <span class="award-badge-medal">🏆</span>
+          <div class="award-badge-text">
+            <span class="award-badge-title">2025 Campbelltown Local Business Awards</span>
+            <span class="award-badge-name">Finalist — Outstanding Education Service</span>
+          </div>
+        </div>
+        <h2 class="sec-title">Meet Amritpal &amp; Sonia.</h2>
+        <p class="sec-sub" style="margin-bottom:1.25rem">Prior to driving instruction, Amritpal was a First Class Tradesman for 20 years — building the patience and customer service skills that define every lesson. With over 20 years on Sydney's roads and Cert IV in Training and Assessment, he tailors every lesson to your learning style, skill level, and goals.</p>
+        <p class="sec-sub" style="margin-bottom:1.75rem">Wife and co-instructor Sonia brings the same calm, personalised approach. Both are here to help you gain your freedom. Speaks English, Hindi, Punjabi and Urdu.</p>
         <div class="about-creds">
           <div class="cred-item">
             <div class="cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <div><div class="cred-text">RTA Qualified Instructor</div><div class="cred-sub">Fully accredited &amp; insured</div></div>
+            <div><div class="cred-text">Cert IV Transport &amp; Logistics — Car Driving Instruction</div><div class="cred-sub">PVET Institute · March 2018</div></div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><polyline points="16 2 16 6"/><polyline points="8 2 8 6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <div><div class="cred-text">Cert IV Motor Vehicle Driver Training</div><div class="cred-sub">121 Driver Training · July 2024</div></div>
           </div>
           <div class="cred-item">
             <div class="cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-            <div><div class="cred-text">Transport for NSW Accredited Assessor</div><div class="cred-sub">Senior driver assessments</div></div>
+            <div><div class="cred-text">Accredited Older Driver Assessor</div><div class="cred-sub">Transport for NSW · October 2022</div></div>
           </div>
           <div class="cred-item">
-            <div class="cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <div><div class="cred-text">12+ Years Experience</div><div class="cred-sub">500+ students licensed</div></div>
+            <div class="cred-icon" style="background:rgba(240,192,64,.12);border-color:rgba(240,192,64,.4);color:#A07010"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+            <div><div class="cred-text">2025 Campbelltown Local Business Awards</div><div class="cred-sub">Finalist — Outstanding Education Service</div></div>
           </div>
         </div>
         <a href="tel:0412223604" class="btn btn-orange">Call Amritpal: 0412 223 604</a>
@@ -826,7 +869,7 @@ img{max-width:100%;display:block}
         <span class="eyebrow">Our Fleet</span>
         <span class="line"></span>
         <h2 class="sec-title">Learn in a modern dual-control vehicle.</h2>
-        <p class="sec-sub" style="margin-bottom:1.75rem">Safety, comfort, and technology — our dual-control sedan gives you and your instructor full control at all times. Automatic available.</p>
+        <p class="sec-sub" style="margin-bottom:1.75rem">Two modern dual-control vehicles — a white Hyundai i30 (automatic) and a branded SUV — both fully insured, equipped with instructor controls, and comfortable for every lesson.</p>
         <div class="vehicle-feats">
           <div class="v-feat">
             <div class="v-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
@@ -838,7 +881,7 @@ img{max-width:100%;display:block}
           </div>
           <div class="v-feat">
             <div class="v-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="v-feat-text">Automatic transmission available</div>
+            <div class="v-feat-text">Auto (Hyundai i30) &amp; Manual (SUV)</div>
           </div>
           <div class="v-feat">
             <div class="v-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg></div>
@@ -848,10 +891,7 @@ img{max-width:100%;display:block}
         <a href="#contact" class="btn btn-orange">Book in Our Vehicle</a>
       </div>
       <div class="vehicle-photo reveal">
-        <div class="photo-ph" style="height:360px">
-          <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <p class="ph-text">Photo: Superb Driving School car, clean, parked — Glenfield suburb</p>
-        </div>
+        <img src="assets/photos/car-grey-suv.jpg" alt="Superb Driving School — branded dual-control vehicle" class="real-photo" style="height:360px;border-radius:12px">
       </div>
     </div>
   </div>
@@ -917,6 +957,90 @@ img{max-width:100%;display:block}
           <div><div class="testi-name">Marcus T.</div><div class="testi-loc">Ingleburn · Google Review</div></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ P-PLATE WALL ═══ -->
+<section class="sec">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:2.75rem">
+      <span class="eyebrow">Student Wins</span>
+      <span class="line" style="margin:0 auto 1.5rem"></span>
+      <h2 class="sec-title">Passed. First go.</h2>
+      <p class="sec-sub" style="margin:0 auto;max-width:460px">Every P-plate is a story. Here are just a few of our students celebrating their licence — straight from the test centre.</p>
+    </div>
+    <div class="success-grid reveal">
+      <div class="success-card">
+        <img src="assets/photos/pass-1.jpg" alt="Student passing driving test">
+        <div class="success-caption"><span class="success-p-badge">P PLATES</span><br>Passed first go!</div>
+      </div>
+      <div class="success-card">
+        <img src="assets/photos/pass-2.jpg" alt="Student passing driving test at Service NSW">
+        <div class="success-caption"><span class="success-p-badge">P PLATES</span><br>Got my licence! 🎉</div>
+      </div>
+      <div class="success-card">
+        <img src="assets/photos/pass-3.jpg" alt="Lakhwinder passing driving test">
+        <div class="success-caption"><span class="success-p-badge">P PLATES</span><br>Australian gold licence!</div>
+      </div>
+      <div class="success-card">
+        <img src="assets/photos/pass-5.jpg" alt="Seerat passing driving test">
+        <div class="success-caption"><span class="success-p-badge">P PLATES</span><br>Congratulations Seerat! 🎊</div>
+      </div>
+      <div class="success-card">
+        <img src="assets/photos/pass-7.jpg" alt="Student celebrating passing">
+        <div class="success-caption"><span class="success-p-badge">P PLATES</span><br>Pardeep — passed!</div>
+      </div>
+      <div class="success-card">
+        <img src="assets/photos/pass-6.jpg" alt="Student with Amrit at test centre">
+        <div class="success-caption"><span class="success-p-badge">P PLATES</span><br>Passed first attempt!</div>
+      </div>
+      <div class="success-card">
+        <img src="assets/photos/amrit-and-sonia.jpg" alt="Amritpal and Sonia — your instructors">
+        <div class="success-caption">Amrit &amp; Sonia — your instructors</div>
+      </div>
+      <div class="success-card" style="background:var(--orange);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;padding:2rem;text-align:center">
+        <div style="font-family:'Montserrat',sans-serif;font-size:2.5rem;font-weight:900;color:#fff;line-height:1">Your<br>Turn.</div>
+        <a href="/register" class="btn btn-white" style="font-size:.72rem">Book a Lesson</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BLOG TEASER ═══ -->
+<section class="sec sec-alt">
+  <div class="container">
+    <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:0">
+      <div>
+        <span class="eyebrow">Resources &amp; Advice</span>
+        <span class="line"></span>
+        <h2 class="sec-title">Helpful guides for drivers.</h2>
+      </div>
+      <a href="/blog" class="btn btn-outline">View All Articles</a>
+    </div>
+    <div class="blog-teaser reveal">
+      <a href="/blog" class="blog-card">
+        <div class="blog-card-img">
+          <img src="assets/photos/award-certificate.jpg" alt="Senior Driver Assessment NSW" style="width:100%;height:100%;object-fit:cover">
+          <span class="blog-card-tag">Senior Drivers</span>
+        </div>
+        <div class="blog-card-body">
+          <h3>Understanding Your Older Driver Assessment in NSW</h3>
+          <p>Turning 75 and got a letter from the RTA? Here's exactly what the Older Driver Assessment involves — step by step, no surprises.</p>
+          <span class="blog-read">Read article →</span>
+        </div>
+      </a>
+      <a href="/blog#refresher" class="blog-card">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,#1c1208,#E8650A)">
+          <img src="assets/photos/pass-4.jpg" alt="Refresher driving lessons" style="width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;opacity:.8">
+          <span class="blog-card-tag">Tips</span>
+        </div>
+        <div class="blog-card-body">
+          <h3>Refresher Lessons for Senior Drivers: What to Expect</h3>
+          <p>A 1-hour warm-up lesson before your assessment can make all the difference. Find out what we cover and how to prepare.</p>
+          <span class="blog-read">Read article →</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -1009,8 +1133,9 @@ img{max-width:100%;display:block}
         </a>
         <div class="footer-socials">
           <a href="#" class="soc" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="#" class="soc" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.instagram.com/superbdriving" target="_blank" rel="noopener" class="soc" aria-label="Instagram @superbdriving"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
         </div>
+        <div style="margin-top:.6rem;font-size:.72rem;color:rgba(255,255,255,.3)">📸 <a href="https://www.instagram.com/superbdriving" target="_blank" rel="noopener" style="color:rgba(255,255,255,.4);transition:color .2s" onmouseover="this.style.color='#E8650A'" onmouseout="this.style.color='rgba(255,255,255,.4)'">@superbdriving</a></div>
       </div>
       <div class="fcol">
         <h4>Navigate</h4>
@@ -1021,6 +1146,7 @@ img{max-width:100%;display:block}
           <li><a href="#about">About Amritpal</a></li>
           <li><a href="#testimonials">Reviews</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="/blog" style="color:var(--orange)">Blog</a></li>
         </ul>
       </div>
       <div class="fcol">

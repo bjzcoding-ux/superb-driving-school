@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /instructor
+
+Sitemap: https://www.superbdrivingschool.com.au/sitemap.xml
